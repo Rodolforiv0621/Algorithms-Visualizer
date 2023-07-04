@@ -1,36 +1,24 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 
 function App() {
-  const [lines, setLines] = useState([]);
-  useEffect(()=>{
-    resetArray();
-  },[]);
-
-  function resetArray(length){
-    const arr = [];
-    for(let i = 0;i<15;i++){
-      arr.push(Math.floor(Math.random() * 100));
-    }
-    setLines(arr);
-  }
+  const navigate = useNavigate();
   
   return (
     <>
       <header className="header">
-        <a href="#" className='logo'>Link</a>
+        <a className="logo" onClick={() => navigate("")}>
+          Algorithms Visualizer
+        </a>
         <nav className="navbar">
-          <a href="#" >Hello1</a>
-          <a href="#">Hello2</a>
-          <a href="#">Hello3</a>
-          <a href="#">Hello4</a>
+          <a onClick={() => navigate("/sorting")}>Sorting Algorithms</a>
+          <a onClick={() => navigate("/pathfinding")}>Pathfinding Algorithms</a>
+          {/* <a href="#">Hello3</a> */}
         </nav>
       </header>
-      <div className="container">
-        {(lines.length > 0) && lines.map((line) => <div className='line' >{line}</div>)}
-      </div>
     </>
   );
 }
