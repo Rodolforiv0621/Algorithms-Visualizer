@@ -76,3 +76,9 @@ html{
 a{
   cursor: pointer;
 }
+
+.delete{
+  margin-left: 30px;
+  cursor: pointer;
+  padding: 3px;
+}
