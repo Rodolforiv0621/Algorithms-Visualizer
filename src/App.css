@@ -77,7 +77,7 @@ a{
   cursor: pointer;
 }
 
-.delete{
+button{
   margin-left: 30px;
   cursor: pointer;
   padding: 3px;
