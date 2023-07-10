@@ -10,9 +10,6 @@ export async function bubbleSort(arr, update){
             if(arr[j] > arr[j+1]){ 
                 document.getElementById(j).style.backgroundColor = "green"
                 document.getElementById(j+1).style.backgroundColor = "red"
-                //**********************************
-                //Add update counter Here
-                //***********************************
                 update();
                 await delay(50);
                 swap(j, j +1)

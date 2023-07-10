@@ -8,7 +8,6 @@ function SortingPage(){
   const navigate = useNavigate();
   const [lines, setLines] = useState([]);
   const [count, setCount] = useState(0);
-  const [time, setTime] = useState(0);
   function updateCount(){
     setCount(prevCount => prevCount +1)
   }
