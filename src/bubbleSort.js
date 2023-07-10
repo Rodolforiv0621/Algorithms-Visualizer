@@ -1,11 +1,19 @@
-export async function bubbleSort(arr){
+
+
+
+export async function bubbleSort(arr, update){
     let swapped = false;
     for(var i = 0;i<arr.length-1;i++){
         swapped = false
+        
         for(var j = 0;j<arr.length-1-i;j++){
             if(arr[j] > arr[j+1]){ 
                 document.getElementById(j).style.backgroundColor = "green"
-                document.getElementById(j+1).style.backgroundColor = "red" 
+                document.getElementById(j+1).style.backgroundColor = "red"
+                //**********************************
+                //Add update counter Here
+                //***********************************
+                update();
                 await delay(50);
                 swap(j, j +1)
                 let temp = arr[j]
@@ -23,12 +31,13 @@ export async function bubbleSort(arr){
             
         } 
         if(!swapped){
-            for(let k = 0;k<=i;k++){
+            for(let k = 0;k<=arr.length;k++){
                 document.getElementById(k).style.backgroundColor = "green";
+                await delay(30)
             }
             break
         }
-        if(j == 0 && i == arr.length-2)document.getElementById(j).style.backgroundColor = "green";
+        
     }
 }
 function delay(ms) {
@@ -41,3 +50,4 @@ function swap(index1, index2) {
     document.getElementById(index1).style.height = height2 + "px";
     document.getElementById(index2).style.height = height + "px";
 }
+
